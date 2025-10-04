@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio Flask</title>
+</head>
+<body>
+    <h1>Calculadora de soma</h1>
+    <!-- Criamos um formulario com label, input e button -->
+    <form action="{{url_for('index')}}" method="POST">
+        <input type="text" name="num1" placeholder="Digite um numero">
+        <br>
+        <input type="text" name="num2" placeholder="Digite outro numero">
+        <button type="submite">Somar</button>
+    </form>
+    {% if resultado is not none %}
+            <p><strong>Resultado:</strong>{{resultado}}</p>
+        {% endif %}
+        {% if erro %}
+            <p style="color:red;">{{erro}}</p>
+        {% endif %}
+</body>
+</html>
